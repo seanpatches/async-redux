@@ -14,3 +14,4 @@ Character.propTypes = {
   character: PropTypes.object.isRequired
 };
 
+export default Character;
