@@ -5,30 +5,9 @@ import { createAction } from 'promise-middleware-redux';
 // export const CHARACTER_LOADING = 'CHARACTER_LOADING';
 
 export const [
-  getCharacterList,
-  GET_CHARACTERLIST,
-  CHARACTER_LOADING,
-  GET_CHARACTERSLIST_FULFILLED,
-  GET_CHARACTER_ERROR
-] = createAction('GET_CHARACTERSLIST', fetchAvatar);
-
-// export const getCharacterList = () => dispatch => {
-//   dispatch({
-//     type: CHARACTER_LOADING
-//   });
-
-//   return fetchAvatar()
-//     .then(characterList => {
-//       dispatch({
-//         type: GET_CHARACTERLIST,
-//         payload: characterList
-//       });
-//     })
-//     .catch(err => {
-//       dispatch({
-//         type: GET_CHARACTER_ERROR,
-//         payload: err
-//       });
-//     });
-
-// };
+  getCharacterList, //name of action creator
+  GET_CHARACTERLIST, //action
+  CHARACTER_LOADING, //action pending
+  GET_CHARACTERSLIST_FULFILLED, //action fulfilled
+  GET_CHARACTER_ERROR //action rejected
+] = createAction('GET_CHARACTERSLIST', fetchAvatar); //'string title', function
