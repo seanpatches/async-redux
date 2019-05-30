@@ -9,7 +9,8 @@ export const fetchAvatar = () => {
     .then(json => json.map(character => ({
       name: character.name,
       image: character.photoUrl,
-      id: character._id
+      id: character._id,
+      affiliation: character.affiliation
     })));
 };
 
