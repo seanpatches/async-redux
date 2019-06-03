@@ -8,7 +8,7 @@ export default function App(){
     <Router>
       <Switch>
         <Route exact path='/'component={AllCharacters}/>
-        <Route  path='/:name'component={DetailsByUrl}/>
+        <Route path='/:name'component={DetailsByUrl}/>
       </Switch>
     </Router>
   );
