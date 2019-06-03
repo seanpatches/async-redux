@@ -1,8 +1,30 @@
-import React from 'react';
-import { render } from 'react-dom';
-import App from './components/App';
+import {
+  createStore,
+  applyMiddleware
+} from 'redux';
 
-render(
-  <App />,
-  document.getElementById('root')
+const logger = store => next => action => {
+  next(action);
+  console.log(action);
+
+};
+
+function reducer(state = {}, action){
+  if(action.type == 'Billy' && action.payload == 'Strings'){
+    action.type = 'Wild Bill';
+    action.payload = 'Strang';
+  }
+  return state;
+
+}
+
+const store = createStore(
+  reducer,
+  applyMiddleware(logger)
 );
+
+store.dispatch({
+  type: 'Billy',
+  payload: 'Strings'
+});
+
